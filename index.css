@@ -4,6 +4,13 @@
   padding: 0px;
   font-family: "Permanent Marker", cursive;
   font-size: 1.1rem;
+  letter-spacing: 0.1rem;
+}
+a {
+  text-decoration: none;
+}
+td {
+  padding: 6px 2px;
 }
 #user {
   display: flex;
@@ -23,4 +30,9 @@
 }
 #repos table {
   padding: 0px 6px;
+}
+#repos table tr:hover,
+#repos table tr:focus {
+  color: blue;
+  transition: color 0.3s;
 }
