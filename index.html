@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>::hellø~wørld::</title>
+    <script src="index.js"></script>
+    <link
+      href="https://fonts.googleapis.com/css?family=Amatic+SC|Indie+Flower|Permanent+Marker&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <body>
+    <div id="root">
+      <p id="loading-alert">
+        While I'm loading data info from api, I'd like you to please be patient.
+        Thanks!
+      </p>
+      <div id="user">
+        <div>
+          <img id="avatar" src="#" alt="github-avatar" />
+        </div>
+        <ul>
+          <li>
+            <span>Name</span>
+            <span>-</span>
+            <span id="name"></span>
+          </li>
+          <li>
+            <span>Bio</span>
+            <span>-</span>
+            <span id="bio"></span>
+          </li>
+          <li>
+            <span>Location</span>
+            <span>-</span>
+            <span id="location"></span>
+          </li>
+          <li>
+            <span>Open for hiring?</span>
+            <span>-</span>
+            <span id="hiring"></span>
+          </li>
+          <li>
+            <span>Email</span>
+            <span>-</span>
+            <span id="email"
+              ><a href="mailto:harry2office@gmail.com"
+                >harry2office@gmail.com</a
+              ></span
+            >
+          </li>
+        </ul>
+      </div>
+      <div id="repos">
+        <table>
+          <thead>
+            <tr>
+              <th>S.No.</th>
+              <th>Name</th>
+              <th>About</th>
+              <th>App</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,26 @@
+* {
+  box-sizing: border-box;
+  margin: 0px;
+  padding: 0px;
+  font-family: "Permanent Marker", cursive;
+  font-size: 1.1rem;
+}
+#user {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 6px;
+  flex-wrap: wrap;
+}
+#avatar {
+  width: 120px;
+  height: 120px;
+  margin-right: 25px;
+  border-radius: 6px;
+}
+#repos {
+  display: none;
+}
+#repos table {
+  padding: 0px 6px;
+}
