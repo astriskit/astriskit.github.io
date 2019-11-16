@@ -10,7 +10,9 @@ async function getUser() {
 }
 async function getRepos() {
   try {
-    let res = await fetch("https://api.github.com/users/astriskit/repos");
+    let res = await fetch(
+      "https://api.github.com/users/astriskit/repos?sort=created"
+    );
     let json = await res.json();
     return json;
   } catch (er) {
