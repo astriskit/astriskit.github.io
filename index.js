@@ -43,7 +43,7 @@ function setInfo(
   e("avatar").setAttribute("src", avatar_url);
   e("name").innerHTML = `<a href="${html_url}">${name}</a>`;
   e("bio").innerText = bio;
-  e("location").innerText = location;
+  e("location").innerText = location || "Somewhere in mystery-land!";
   let h = e("hiring");
   if (hireable) {
     h.innerText = "I'm open for good opportunities!";
