@@ -12,6 +12,7 @@ a {
 td {
   padding: 6px 2px;
 }
+#loading-alert,
 #user {
   display: flex;
   justify-content: center;
@@ -25,14 +26,48 @@ td {
   margin-right: 25px;
   border-radius: 6px;
 }
-#repos {
+#root {
   display: none;
 }
 #repos table {
   padding: 0px 6px;
+  border-collapse: collapse;
+}
+@keyframes focused-link {
+  0% {
+    color: hotpink;
+    text-shadow: 1px 1px 2px black;
+  }
+  25% {
+    color: green;
+    text-shadow: 1px 1px 2px mediumspringgreen;
+  }
+  50% {
+    color: wheat;
+    text-shadow: 1px 1px 2px royalblue;
+  }
+  75% {
+    color: red;
+    text-shadow: 1px 1px 2px coral;
+  }
+  100% {
+    color: blue;
+    text-shadow: 1px 1px 2px mediumslateblue;
+  }
 }
 #repos table tr:hover,
 #repos table tr:focus {
-  color: blue;
-  transition: color 0.3s;
+  border: 1px solid black;
+  border-left: none;
+  border-right: none;
+  background: #ddb6e685;
+  color: teal;
+  text-shadow: 1px 1px 1px black;
+}
+#repos table tr:hover a,
+#repos table tr:focus a {
+  animation-name: focused-link;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
 }
