@@ -2,9 +2,7 @@
   box-sizing: border-box;
   margin: 0px;
   padding: 0px;
-  font-family: "Permanent Marker", cursive;
-  font-size: 1.1rem;
-  letter-spacing: 0.1rem;
+  font-family: "Roboto", sans-serif;
 }
 a {
   text-decoration: none;
@@ -15,15 +13,14 @@ td {
 #loading-alert,
 #user {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   padding: 6px;
-  flex-wrap: wrap;
 }
 #avatar {
-  width: 120px;
-  height: 120px;
-  margin-right: 25px;
+  width: 160px;
+  height: 160px;
   border-radius: 6px;
 }
 #root {
@@ -55,14 +52,19 @@ td {
     text-shadow: 1px 1px 2px mediumslateblue;
   }
 }
-#repos table tr:hover,
-#repos table tr:focus {
+#repos table thead tr {
   border: 1px solid black;
   border-left: none;
   border-right: none;
-  background: #ddb6e685;
-  color: teal;
-  text-shadow: 1px 1px 1px black;
+  background: grey;
+  color: whitesmoke;
+  text-shadow: 1px 1px 1px orangered;
+}
+#repos table tbody tr:hover,
+#repos table tbody tr:focus {
+  background: grey;
+  color: whitesmoke;
+  text-shadow: 1px 1px 1px orangered;
 }
 #repos table tr:hover a,
 #repos table tr:focus a {

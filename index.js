@@ -60,7 +60,7 @@ function setInfo(
     }</td></tr>`;
   });
   tbody.innerHTML = rows;
-  e("root").style.display = "unset";
+  e("root").style.display = "block";
   e("loading-alert").style.display = "none";
 }
 
