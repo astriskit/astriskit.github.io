@@ -18,17 +18,31 @@ td {
   align-items: center;
   padding: 6px;
 }
-#avatar {
+#loading-alert {
+  justify-content: stretch;
+}
+#loading-alert > * {
+  flex: 1;
+}
+#avatar img {
   width: 160px;
   height: 160px;
   border-radius: 6px;
 }
 #root {
+  flex-flow: column nowrap;
+  justify-content: stretch;
+  align-items: stretch;
   display: none;
 }
+#root > * {
+  display: flex;
+}
 #repos table {
+  flex: 1;
   padding: 0px 6px;
   border-collapse: collapse;
+  margin: 0px 10px;
 }
 @keyframes focused-link {
   0% {
