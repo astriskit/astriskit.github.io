@@ -15,7 +15,16 @@ async function getRepos() {
     );
     const json = await res.json();
     const repos = json.filter(({ name }) => name !== "astriskit.github.io");
-    return repos;
+    const fork = [];
+    const nFork = [];
+    for (const repo of repos) {
+      if (repo?.fork) {
+        fork.push(repo);
+      } else {
+        nFork.push(repo);
+      }
+    }
+    return { fork, nFork };
   } catch (er) {
     console.error(er.message || "User-repo-fetch error!!");
     return null;
@@ -39,7 +48,7 @@ function setInfo(
     location = "",
     hireable = false,
   },
-  repos = []
+  { nFork = [], fork = [] }
 ) {
   e("avatar").setAttribute("href", html_url);
   q("#avatar img").setAttribute("src", avatar_url);
@@ -52,18 +61,26 @@ function setInfo(
   } else {
     h.style.display = "none";
   }
-  let tbody = q("#repos table tbody");
-  let rows = "";
-  repos.forEach(({ name, html_url, description, homepage }, ind) => {
-    rows += `<tr><td>(${
-      ind + 1
-    })</td><td><a href="${html_url}" target="_blank">${name}</a></td><td>${
-      description || "-"
-    }</td><td>${
-      homepage ? `<a href=${homepage} target="_blank">View</a>` : "-"
-    }</td></tr>`;
-  });
-  tbody.innerHTML = rows;
+  const tNForkBody = q("#repos table#nFork tbody");
+  const tForkBody = q("#repos table#fork tbody");
+
+  const fillTBody = (tBody, repos) => {
+    let rows = "";
+    repos.forEach(({ name, html_url, description, homepage }, ind) => {
+      rows += `<tr><td>(${
+        ind + 1
+      })</td><td><a href="${html_url}" target="_blank">${name}</a></td><td>${
+        description || "-"
+      }</td><td>${
+        homepage ? `<a href=${homepage} target="_blank">View</a>` : "-"
+      }</td></tr>`;
+    });
+    tBody.innerHTML = rows;
+  };
+
+  fillTBody(tNForkBody, nFork);
+  fillTBody(tForkBody, fork);
+
   e("root").style.display = "flex";
   e("loading-alert").style.display = "none";
 }
